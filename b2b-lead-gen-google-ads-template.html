@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>模板二｜B2B 线索型 SaaS 谷歌广告账户配置模板</title>
+  <style>
+    :root {
+      --bg: #eef2f7;
+      --panel: rgba(255, 255, 255, 0.9);
+      --panel-strong: #ffffff;
+      --text: #172033;
+      --muted: #5c6980;
+      --line: rgba(23, 32, 51, 0.11);
+      --accent: #2858d6;
+      --accent-soft: #dfe8ff;
+      --warn: #875514;
+      --shadow: 0 20px 50px rgba(25, 46, 88, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(40, 88, 214, 0.16), transparent 26%),
+        radial-gradient(circle at 85% 10%, rgba(36, 172, 135, 0.12), transparent 20%),
+        linear-gradient(180deg, #f5f8fd 0%, var(--bg) 100%);
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 54px 0 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(32px, 5vw, 58px);
+      max-width: 920px;
+    }
+
+    .lead {
+      margin-top: 18px;
+      max-width: 950px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .hero-grid, .content-grid, .reason-grid, .ai-grid, .term-grid, .steps {
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 24px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      margin-bottom: 42px;
+    }
+
+    .panel, .mini, .term, .step {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .mini, .term, .step {
+      padding: 18px;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .panel h2 {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    .mini strong, .term strong {
+      color: var(--accent);
+    }
+
+    .content-grid, .reason-grid, .ai-grid, .term-grid {
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+    }
+
+    .box {
+      padding: 16px;
+      border-radius: 18px;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      background: #edf2ff;
+      margin-bottom: 10px;
+    }
+
+    .purpose, .warning {
+      padding: 13px 15px;
+      border-radius: 16px;
+      margin-top: 12px;
+    }
+
+    .purpose {
+      background: #eef4ff;
+      border: 1px solid rgba(40, 88, 214, 0.18);
+    }
+
+    .warning {
+      background: #fff5e8;
+      border: 1px solid rgba(135, 85, 20, 0.16);
+      color: #6e4815;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    @media (max-width: 940px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        width: min(100% - 20px, 1180px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <span class="eyebrow">模板二｜B2B Lead Gen（销售线索获取）</span>
+      <h1>适合“预约演示、销售跟进、长决策周期”的谷歌广告账户配置模板</h1>
+      <p class="lead">
+        这个模板适合高客单价或销售参与度高的 SaaS。用户点击广告后，不一定马上付费，而是先留下线索、预约演示、进入销售流程。
+        这种情况下，账户的关键不是“表单数量”，而是“线索质量”和“后端成交回传”。
+      </p>
+      <div class="hero-grid">
+        <div class="mini"><strong>适用产品</strong><br />广告工具、数据工具、安全产品、企业软件、咨询式 SaaS</div>
+        <div class="mini"><strong>核心目标</strong><br />获取高质量线索，减少垃圾表单，把 CRM 阶段和成交结果回传给谷歌</div>
+        <div class="mini"><strong>配置重点</strong><br />Enhanced Conversions for Leads（线索增强型转化）、离线转化、价值分层</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap content">
+    <section>
+      <article class="panel">
+        <h2>为什么这是第二个模板</h2>
+        <p>
+          不是所有 SaaS 都适合按 PLG（Product-Led Growth，产品驱动增长）去配置广告账户。很多 B2B SaaS 的真实商业过程是：
+          点击广告 → 提交表单 → 销售筛选 → 预约演示 → 商务推进 → 成交。
+        </p>
+        <div class="purpose">
+          所以这里最重要的不是前端“转化数”，而是后端“合格线索数”和“成交价值”。
+          如果账户只优化 form_submit（表单提交），谷歌会自然偏向最容易提交表单的人，而不是最可能成交的企业客户。
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>账户配置项模板</h2>
+        <div class="content-grid">
+          <div class="box">
+            <span class="pill">1. 组织与权限</span>
+            <ul>
+              <li>企业主体建户，财务、投放、分析权限分开</li>
+              <li>使用 Manager Account（管理账户）统一管理子账户，如果你服务多个客户尤其必要</li>
+              <li>建立 UTM（Urchin Tracking Module，网址跟踪参数）命名规则</li>
+            </ul>
+            <div class="purpose">目的：让团队协作、客户交付、归因分析都可追踪、可复盘。</div>
+          </div>
+
+          <div class="box">
+            <span class="pill">2. 数据基础设施</span>
+            <ul>
+              <li>GA4 + GTM + Google Ads 全部联通</li>
+              <li>Auto-tagging（自动标记）开启</li>
+              <li>CRM 系统保存 GCLID（谷歌点击标识符）或 GBRAID / WBRAID</li>
+              <li>表单系统与 CRM 字段映射清楚</li>
+            </ul>
+            <div class="purpose">目的：没有点击 ID（点击标识符），你后面几乎没法把成交结果回传给谷歌。</div>
+          </div>
+
+          <div class="box">
+            <span class="pill">3. 转化设计</span>
+            <ul>
+              <li>Primary Conversion（主要转化）：qualified_demo（合格演示预约）、SQL（销售确认商机）、closed_won（成交）</li>
+              <li>Secondary Conversion（次要转化）：form_submit（表单提交）、ebook_download（资料下载）、pricing_view（查看定价）</li>
+              <li>按线索质量和成单可能性分配转化价值</li>
+            </ul>
+            <div class="purpose">目的：让系统学会区分“愿意填表的人”和“真正值得销售跟进的人”。</div>
+          </div>
+
+          <div class="box">
+            <span class="pill">4. 回传机制</span>
+            <ul>
+              <li>部署 Enhanced Conversions for Leads（线索增强型转化）</li>
+              <li>必要时加 Offline Conversion Import（离线转化导入）</li>
+              <li>以 Data Manager（数据管理器）或 CRM 原生连接器做自动回传</li>
+            </ul>
+            <div class="purpose">目的：把广告点击和后续销售结果重新连起来，建立真正的广告投资回报闭环。</div>
+          </div>
+
+          <div class="box">
+            <span class="pill">5. 广告系列结构</span>
+            <ul>
+              <li>优先 Search Campaign（搜索广告系列）</li>
+              <li>按行业、角色、问题、竞品、解决方案拆广告组或广告系列</li>
+              <li>品牌词和竞品词分开管理</li>
+              <li>对高价值国家单独分预算</li>
+            </ul>
+            <div class="purpose">目的：B2B 需求常常很细分，账户结构必须服务后续判断“哪个市场、哪个角色更值钱”。</div>
+          </div>
+
+          <div class="box">
+            <span class="pill">6. 页面与线索筛选</span>
+            <ul>
+              <li>页面上要明确谁适合使用你的产品，谁不适合</li>
+              <li>表单问题可以加入公司规模、职位、使用场景</li>
+              <li>预约演示页要清楚说明流程与门槛</li>
+            </ul>
+            <div class="purpose">目的：线索表单不是越短越好，而是要为广告优化系统提供“质量区分信号”。</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>为什么要这样设置</h2>
+        <div class="reason-grid">
+          <div class="box">
+            <h3>为什么要保存 GCLID</h3>
+            <p>
+              GCLID（Google Click Identifier，谷歌点击标识符）是广告点击的身份证。没有它，CRM 中的成交客户就很难回溯到原始广告点击。
+            </p>
+            <div class="purpose">目标：把“广告花费”与“销售结果”打通。</div>
+          </div>
+          <div class="box">
+            <h3>为什么要做 Enhanced Conversions for Leads</h3>
+            <p>
+              因为 B2B 成交通常发生在网站之外。Google 官方专门提供这套机制，就是为了让线索型业务把后续的线索确认和成交回传回来。
+            </p>
+            <div class="purpose">目标：让谷歌不是优化“表单提交”，而是优化“更像会成交的线索”。</div>
+          </div>
+          <div class="box">
+            <h3>为什么要把浅层和深层转化分开</h3>
+            <p>
+              form_submit（表单提交）可以告诉你页面有没有摩擦，但不能单独作为出价目标。否则系统会优先买廉价线索，而不是高质量企业客户。
+            </p>
+            <div class="purpose">目标：保持测量完整，同时避免优化方向跑偏。</div>
+          </div>
+          <div class="box">
+            <h3>为什么要做价值分层</h3>
+            <p>
+              一个 3 人小团队试用，和一个 500 人企业预约采购演示，它们的商业价值通常差别巨大。广告账户不能把两者等价看待。
+            </p>
+            <div class="purpose">目标：让智能出价围绕“高价值客户”而不是“更多客户”。</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>AI 能力怎么用</h2>
+        <div class="warning">
+          在线索型 SaaS 里，AI 最大的价值不是写 20 条广告标题，而是识别“哪类企业更像好客户”。前提是你把好客户的数据回传给它。
+        </div>
+        <div class="ai-grid" style="margin-top:14px;">
+          <div class="box">
+            <h3>用 AI 做线索质量优化</h3>
+            <ul>
+              <li>把 MQL（Marketing Qualified Lead，市场确认线索）和 SQL（Sales Qualified Lead，销售确认线索）分开回传</li>
+              <li>按成交金额给不同客户不同 value（价值）</li>
+              <li>按行业、地区、职位做价值修正</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>用 AI 做搜索意图扩展</h3>
+            <ul>
+              <li>先用高意图词起量，再逐步测试 broad match（广泛匹配）</li>
+              <li>前提是你已经有可靠的高质量转化回传</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>用 AI 做广告文案辅助</h3>
+            <ul>
+              <li>总结行业角色痛点</li>
+              <li>生成不同 ICP（Ideal Customer Profile，理想客户画像）版本的标题</li>
+              <li>提炼定价页和案例页中的可信证据</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>你的产品视角</h3>
+            <p>
+              你的 SaaS 帮企业配置谷歌广告账户。那你的广告与页面就不应该只卖“省时间”，而应该卖“把错误配置改成可学习、可归因、可扩张的账户系统”。
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>执行步骤</h2>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div>先确定什么才叫合格线索，不要直接拿表单提交当最终目标。</div>
+          <div class="step"><div class="step-num">2</div>在站点、表单、CRM 中存储点击 ID（如 GCLID）。</div>
+          <div class="step"><div class="step-num">3</div>部署 Enhanced Conversions for Leads（线索增强型转化）。</div>
+          <div class="step"><div class="step-num">4</div>把 MQL、SQL、Closed Won（成交）设计成可回传事件。</div>
+          <div class="step"><div class="step-num">5</div>从搜索广告起步，按问题与角色拆结构。</div>
+          <div class="step"><div class="step-num">6</div>用价值出价而不是数量出价，逐步训练 AI。</div>
+        </div>
+      </article>
+    </section>
+
+    <aside>
+      <article class="panel">
+        <h2>关键术语解释</h2>
+        <div class="term-grid">
+          <div class="term"><strong>Lead（线索）</strong><br />指留下可联系信息并表达一定兴趣的潜在客户，但不代表一定值得销售跟进。</div>
+          <div class="term"><strong>MQL（Marketing Qualified Lead，市场确认线索）</strong><br />市场团队认为达到了基本匹配度的线索。</div>
+          <div class="term"><strong>SQL（Sales Qualified Lead，销售确认线索）</strong><br />销售团队确认有真实采购可能性的线索。</div>
+          <div class="term"><strong>Offline Conversion（离线转化）</strong><br />发生在网站外部或延后发生的业务结果，例如电话成交、销售确认、合同签订。</div>
+          <div class="term"><strong>Enhanced Conversions for Leads（线索增强型转化）</strong><br />Google 提供的增强回传方式，用于把提交线索后的后续状态更稳地回传给广告系统。</div>
+          <div class="term"><strong>Customer Match（客户匹配）</strong><br />用客户邮箱等第一方数据建立受众，用于排除、再营销或相似扩展。</div>
+          <div class="term"><strong>ICP（Ideal Customer Profile，理想客户画像）</strong><br />最适合买你产品的企业类型，不是“谁都可以”。</div>
+          <div class="term"><strong>Consent Mode（同意模式）</strong><br />让谷歌知道用户是否同意广告和分析数据被使用，尤其涉及 EEA 流量时很重要。</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>你应该重点盯的指标</h2>
+        <div class="term-grid">
+          <div class="term"><strong>CPL（Cost Per Lead，单条线索成本）</strong><br />只能做参考，不能作为最高目标。</div>
+          <div class="term"><strong>CPQL（Cost Per Qualified Lead，单条合格线索成本）</strong><br />比 CPL 更接近真实商业质量。</div>
+          <div class="term"><strong>CAC（Customer Acquisition Cost，客户获取成本）</strong><br />真正拿到一个付费客户花了多少钱。</div>
+          <div class="term"><strong>Pipeline Value（商机金额）</strong><br />进入销售管道后的潜在金额，用于价值出价更实用。</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>核心资料</h2>
+        <div class="term-grid">
+          <div class="term"><a href="https://support.google.com/google-ads/answer/15713840" target="_blank" rel="noreferrer">Google Ads Help｜Enhanced conversions for leads</a></div>
+          <div class="term"><a href="https://support.google.com/google-ads/answer/7012522" target="_blank" rel="noreferrer">Google Ads Help｜About offline conversion imports</a></div>
+          <div class="term"><a href="https://support.google.com/google-ads/answer/7065882" target="_blank" rel="noreferrer">Google Ads Help｜About Smart Bidding</a></div>
+          <div class="term"><a href="https://support.google.com/google-ads/answer/14792795" target="_blank" rel="noreferrer">Google Ads Help｜Value-based bidding best practices</a></div>
+          <div class="term"><a href="https://support.google.com/google-ads/answer/13489421" target="_blank" rel="noreferrer">Google Ads Help｜Lead generation best practices</a></div>
+          <div class="term"><a href="https://support.google.com/google-ads/answer/6298" target="_blank" rel="noreferrer">Google Ads Help｜About Customer Match</a></div>
+          <div class="term"><a href="https://support.google.com/google-ads/answer/10000067" target="_blank" rel="noreferrer">Google Ads Help｜Consent mode</a></div>
+          <div class="term"><a href="https://searchengineland.com/capture-enterprise-level-leads-b2b-search-393655" target="_blank" rel="noreferrer">Search Engine Land｜B2B 搜索线索质量思路</a></div>
+        </div>
+      </article>
+    </aside>
+  </div>
+</body>
+</html>
