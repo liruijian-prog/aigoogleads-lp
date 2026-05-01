@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>模板一｜PLG SaaS 谷歌广告账户配置模板</title>
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --panel: rgba(255, 252, 245, 0.88);
+      --panel-strong: #fffaf0;
+      --text: #1d2a23;
+      --muted: #5b6b62;
+      --line: rgba(29, 42, 35, 0.12);
+      --accent: #0e7a5f;
+      --accent-soft: #d7f0e7;
+      --warn: #8a5b12;
+      --shadow: 0 18px 45px rgba(31, 49, 40, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(14, 122, 95, 0.15), transparent 32%),
+        radial-gradient(circle at top right, rgba(207, 149, 32, 0.14), transparent 28%),
+        linear-gradient(180deg, #f7f2e9 0%, var(--bg) 100%);
+      line-height: 1.6;
+    }
+
+    .hero {
+      padding: 56px 24px 28px;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto 40px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(32px, 5vw, 58px);
+      max-width: 900px;
+    }
+
+    .lead {
+      max-width: 920px;
+      margin-top: 18px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .meta-card, .panel, .term, .source, .step {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .meta-card {
+      padding: 18px 18px 16px;
+    }
+
+    .meta-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .panel h2 {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    .panel h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      padding: 16px;
+      border-radius: 18px;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #eef6f2;
+      color: var(--accent);
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .purpose {
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: #f2f9f5;
+      border: 1px solid rgba(14, 122, 95, 0.16);
+      color: #234436;
+    }
+
+    .warning {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #fff5e6;
+      color: #654515;
+      border: 1px solid rgba(138, 91, 18, 0.16);
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .step {
+      padding: 16px;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin-bottom: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .terms {
+      display: grid;
+      gap: 12px;
+    }
+
+    .term {
+      padding: 16px;
+    }
+
+    .term strong {
+      color: var(--accent);
+    }
+
+    .sources {
+      display: grid;
+      gap: 10px;
+    }
+
+    .source {
+      padding: 14px 16px;
+    }
+
+    .source a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .check {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #f8fbf8;
+      border: 1px solid var(--line);
+    }
+
+    @media (max-width: 940px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .wrap {
+        width: min(100% - 20px, 1180px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">模板一｜PLG SaaS（产品驱动增长）</span>
+      <h1>适合“免费试用、自助注册、快速转化”的谷歌广告账户配置模板</h1>
+      <p class="lead">
+        这个模板适合 <strong>PLG（Product-Led Growth，产品驱动增长）</strong> 型 SaaS。
+        用户看到广告后，希望尽快自己注册、试用、激活、付费。这里的账户配置核心不是“收更多表单”，而是“让谷歌识别哪些点击最终会变成真正活跃用户和付费用户”。
+      </p>
+      <div class="meta">
+        <div class="meta-card">
+          <strong>适用产品</strong>
+          API 工具、开发者工具、协作工具、自助式软件、低到中客单价 SaaS
+        </div>
+        <div class="meta-card">
+          <strong>核心目标</strong>
+          提高试用注册质量、提高激活率、降低获客成本、让自动出价学到真实收入信号
+        </div>
+        <div class="meta-card">
+          <strong>不该犯的错</strong>
+          只统计注册，不统计激活和付费；太早上 PMax（Performance Max，效果最大化广告系列）
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <main>
+      <section class="stack">
+        <article class="panel">
+          <h2>为什么这是第一个模板</h2>
+          <p>
+            很多 SaaS 创始人第一次投谷歌广告时，直觉是“先把账户开起来，先跑流量”。但对 PLG 产品，这样常常会误导谷歌。
+            因为谷歌最容易先学会的是 <strong>浅层转化</strong>，比如“打开注册页”“提交邮箱”。这些动作便宜，但不一定能带来留存和收入。
+          </p>
+          <div class="purpose">
+            这个模板的目的，是把账户设计成一个“收入学习系统”：
+            先测量注册，再测量激活，再测量付费，把真正有价值的用户路径喂给 Google Ads（谷歌广告） 的 AI（人工智能）出价系统。
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>账户配置项模板</h2>
+          <div class="grid">
+            <div class="card">
+              <span class="tag">1. 账户与账单层</span>
+              <h3>必须配置</h3>
+              <ul>
+                <li>企业主体的 <strong>Payments Profile（付款资料档案）</strong></li>
+                <li>正式的公司名称、地址、税务信息、结算币种</li>
+                <li>主付款卡 + 备用付款卡</li>
+                <li><strong>Advertiser Verification（广告主验证）</strong> 准备材料</li>
+              </ul>
+              <div class="purpose">
+                目的：避免因为付款失败、身份不清、资料频繁修改，导致账户暂停或重新审核。
+              </div>
+            </div>
+
+            <div class="card">
+              <span class="tag">2. 追踪与归因层</span>
+              <h3>必须配置</h3>
+              <ul>
+                <li><strong>GA4（Google Analytics 4，谷歌分析 4）</strong> 建立并与 Google Ads 关联</li>
+                <li><strong>GTM（Google Tag Manager，谷歌标签管理器）</strong> 或 Google tag（谷歌标签）全站部署</li>
+                <li><strong>Auto-tagging（自动标记）</strong> 开启</li>
+                <li>开启增强型转化 <strong>Enhanced Conversions（增强型转化）</strong></li>
+              </ul>
+              <div class="purpose">
+                目的：让每次点击带上可识别参数，并把站内行为尽量准确回传给谷歌。
+              </div>
+            </div>
+
+            <div class="card">
+              <span class="tag">3. 转化层</span>
+              <h3>PLG 推荐设计</h3>
+              <ul>
+                <li><strong>Primary Conversion（主要转化）</strong>：activated_trial（已激活试用）、payment_added（已添加支付方式）、paid_subscription（已付费订阅）</li>
+                <li><strong>Secondary Conversion（次要转化）</strong>：signup_start（开始注册）、signup_complete（完成注册）、pricing_view（查看定价）</li>
+                <li>对不同套餐或用户质量设置不同转化价值</li>
+              </ul>
+              <div class="purpose">
+                目的：不要让系统只学“谁会注册”，而是学“谁会走到收入前一步甚至收入本身”。
+              </div>
+            </div>
+
+            <div class="card">
+              <span class="tag">4. 广告系列层</span>
+              <h3>起步建议</h3>
+              <ul>
+                <li>先从 <strong>Search Campaign（搜索广告系列）</strong> 开始</li>
+                <li>按意图分组：品牌词、类目词、问题词、替代方案词、集成词</li>
+                <li>国家拆分，不要一开始全球混投</li>
+                <li>匹配方式优先 phrase（词组匹配）和 exact（完全匹配）起步</li>
+              </ul>
+              <div class="purpose">
+                目的：先吃最明确需求，再逐步放宽流量入口，而不是一开始把钱交给低意图搜索词。
+              </div>
+            </div>
+
+            <div class="card">
+              <span class="tag">5. 受众层</span>
+              <h3>建议建立</h3>
+              <ul>
+                <li>访问过 pricing（定价页）但未注册</li>
+                <li>已注册但未激活</li>
+                <li>已激活但未付费</li>
+                <li>已付费用户，用于排除或升降价策略</li>
+              </ul>
+              <div class="purpose">
+                目的：让再营销不只是“追用户回来”，而是针对具体漏斗阶段做不同信息触达。
+              </div>
+            </div>
+
+            <div class="card">
+              <span class="tag">6. 落地页层</span>
+              <h3>必须具备</h3>
+              <ul>
+                <li>清晰价值主张</li>
+                <li>产品截图或交互演示</li>
+                <li>定价页、隐私政策、服务条款、联系页面</li>
+                <li>注册流程短，最好支持 Google 登录</li>
+              </ul>
+              <div class="purpose">
+                目的：Google 不只是看广告，也会看目标页面是否真实、清楚、可用。
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>为什么要这样设置</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>为什么要开 Auto-tagging（自动标记）</h3>
+              <p>
+                Auto-tagging 会给广告点击自动加上 <strong>GCLID（Google Click Identifier，谷歌点击标识符）</strong> 等参数。
+                这是把点击和后续站内行为、CRM（客户关系管理系统）结果重新连起来的基础设施。
+              </p>
+              <div class="purpose">
+                目标：让你能知道“哪个关键词带来了哪个付费用户”，而不是只看到一堆注册数。
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>为什么要同时配 GA4 和 Google Ads 转化</h3>
+              <p>
+                GA4 更像全站行为观察器，适合看路径、漏斗、页面表现；Google Ads 转化更像投放优化接口，适合直接喂给出价系统。
+              </p>
+              <div class="purpose">
+                目标：GA4 负责理解用户，Ads 负责优化花钱。两者分工不同，缺一边都会偏。
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>为什么不把 signup_complete（完成注册）设成唯一主要转化</h3>
+              <p>
+                因为 PLG 产品里，注册只是开始，不代表用户理解价值、完成上手、愿意付费。只优化注册量，往往会买到大量“低质量自助流量”。
+              </p>
+              <div class="purpose">
+                目标：把优化目标往后推半步或一步，让 Google 的机器学习更接近商业结果。
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>为什么前期以 Search（搜索）为主</h3>
+              <p>
+                搜索流量反映的是“已经有明确问题和需求的人”。PLG 初期最需要的不是讲品牌故事，而是抢到已经在找解决方案的用户。
+              </p>
+              <div class="purpose">
+                目标：先验证需求捕获，再扩展展示型和自动化广告。
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>AI 能力怎么用，怎么用才对</h2>
+          <div class="warning">
+            Google Ads 的 AI 不是“你开了智能出价就自动赚钱”。它的本质是：你给它什么目标、什么历史数据、什么回传质量，它就学成什么样。
+          </div>
+          <div class="grid" style="margin-top:14px;">
+            <div class="card">
+              <h3>AI 适合做什么</h3>
+              <ul>
+                <li>Smart Bidding（智能出价）：预测哪次拍卖更可能转化</li>
+                <li>RSA（Responsive Search Ads，自适应搜索广告）：组合标题与描述</li>
+                <li>Broad Match（广泛匹配）在高质量转化数据下扩展搜索意图</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>AI 不适合替你做什么</h3>
+              <ul>
+                <li>不会替你定义什么是“好用户”</li>
+                <li>不会替你修正错误埋点</li>
+                <li>不会替你判断你的免费试用是否吸引了薅羊毛流量</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>你应该怎么喂 AI</h3>
+              <ul>
+                <li>回传更深层事件，不要只回传注册</li>
+                <li>为高价值用户设置更高 conversion value（转化价值）</li>
+                <li>把已付费用户做排除受众，避免反复买同一批用户</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>从你的产品视角的洞见</h3>
+              <p>
+                你卖的是“帮 B 端用户配置谷歌账户”的 SaaS。你的广告本身就应该展示你对账户结构、测量逻辑、合规细节的理解。
+                换句话说，你的广告账户就是你产品能力的现场证明。
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>执行步骤</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              用企业主体开 Google Ads 账户，完成账单、付款方式、广告主验证准备。
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              部署 GA4、GTM 和 Google tag，确认 Auto-tagging（自动标记）开启。
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              定义 PLG 漏斗事件：注册、激活、添加支付方式、付费。
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              在 Google Ads 中区分 Primary Conversion（主要转化）和 Secondary Conversion（次要转化）。
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              先上 Search Campaign（搜索广告系列），以品牌词、类目词、问题词分组。
+            </div>
+            <div class="step">
+              <div class="step-num">6</div>
+              建立未注册、未激活、未付费受众，做分阶段再营销。
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="stack">
+        <article class="panel">
+          <h2>术语解释</h2>
+          <div class="terms">
+            <div class="term">
+              <strong>Conversion（转化）</strong><br />
+              指你希望用户完成的关键动作，比如注册、预约演示、付费。它是谷歌判断“广告是否有效”的核心指标。
+            </div>
+            <div class="term">
+              <strong>Campaign（广告系列）</strong><br />
+              账户中的投放容器。预算、地区、语言、出价策略等通常在这一层控制。
+            </div>
+            <div class="term">
+              <strong>PLG（Product-Led Growth，产品驱动增长）</strong><br />
+              依靠产品本身完成获客、激活、转化和扩张的增长方式，通常强调自助注册与试用。
+            </div>
+            <div class="term">
+              <strong>GA4（Google Analytics 4，谷歌分析 4）</strong><br />
+              谷歌的新一代网站与 App 行为分析系统，用来观测用户路径、漏斗和受众。
+            </div>
+            <div class="term">
+              <strong>GTM（Google Tag Manager，谷歌标签管理器）</strong><br />
+              一个统一管理埋点脚本的容器工具，方便你不频繁改代码也能配置追踪。
+            </div>
+            <div class="term">
+              <strong>Auto-tagging（自动标记）</strong><br />
+              自动给广告点击加跟踪参数，帮助归因到具体广告和关键词。
+            </div>
+            <div class="term">
+              <strong>EEA（European Economic Area，欧洲经济区）</strong><br />
+              涉及欧洲数据隐私要求的地区。若你有 EEA 流量，通常需要更严格的同意管理。
+            </div>
+            <div class="term">
+              <strong>Consent Mode（同意模式）</strong><br />
+              用户对 Cookie（跟踪 Cookie）与广告数据是否同意，会通过这个机制传给谷歌，影响测量与广告个性化。
+            </div>
+            <div class="term">
+              <strong>CMP（Consent Management Platform，同意管理平台）</strong><br />
+              就是网站上的 Cookie 同意横幅或同意管理系统，用来收集与记录用户是否授权数据使用。
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>上线检查清单</h2>
+          <div class="checklist">
+            <div class="check">已完成 Payments Profile（付款资料档案）与备用卡</div>
+            <div class="check">已开启 Auto-tagging（自动标记）</div>
+            <div class="check">GA4 与 Google Ads 已关联</div>
+            <div class="check">GTM 或 Google tag 已全站上线</div>
+            <div class="check">已区分主要转化与次要转化</div>
+            <div class="check">已定义 activated_trial（已激活试用）或 paid_subscription（已付费订阅）</div>
+            <div class="check">已建立未付费用户受众</div>
+            <div class="check">如有 EEA 流量，Consent Mode 与 CMP 已上线</div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>核心资料</h2>
+          <div class="sources">
+            <div class="source"><a href="https://support.google.com/google-ads/answer/3095550" target="_blank" rel="noreferrer">Google Ads Help｜About auto-tagging</a></div>
+            <div class="source"><a href="https://support.google.com/google-ads/answer/7268503" target="_blank" rel="noreferrer">Google Ads Help｜Payments profiles in Google Ads</a></div>
+            <div class="source"><a href="https://support.google.com/google-ads/answer/2375435" target="_blank" rel="noreferrer">Google Ads Help｜Import conversions from Google Analytics 4</a></div>
+            <div class="source"><a href="https://support.google.com/google-ads/answer/9888656" target="_blank" rel="noreferrer">Google Ads Help｜About enhanced conversions</a></div>
+            <div class="source"><a href="https://support.google.com/analytics/answer/9379420" target="_blank" rel="noreferrer">Google Analytics Help｜Google Ads links in Analytics</a></div>
+            <div class="source"><a href="https://support.google.com/google-ads/answer/7065882" target="_blank" rel="noreferrer">Google Ads Help｜About Smart Bidding</a></div>
+            <div class="source"><a href="https://support.google.com/google-ads/answer/10000067" target="_blank" rel="noreferrer">Google Ads Help｜Consent mode</a></div>
+          </div>
+        </article>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
