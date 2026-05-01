@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Ads 账户配置模板导航</title>
+  <style>
+    :root {
+      --bg: #f5f4ef;
+      --panel: rgba(255, 255, 255, 0.9);
+      --text: #1f2430;
+      --muted: #5f6979;
+      --line: rgba(31, 36, 48, 0.11);
+      --accent: #0f6c5a;
+      --shadow: 0 20px 54px rgba(26, 38, 51, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(15, 108, 90, 0.12), transparent 24%),
+        radial-gradient(circle at 88% 8%, rgba(194, 134, 30, 0.12), transparent 24%),
+        linear-gradient(180deg, #faf9f5 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+    h1, h2 { margin: 0; line-height: 1.15; }
+    h1 {
+      font-size: clamp(34px, 5vw, 56px);
+      max-width: 900px;
+    }
+    .lead {
+      margin-top: 18px;
+      max-width: 900px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .pill {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #e6f3ef;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+    li + li { margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Google Ads 谷歌广告账户配置模板导航</h1>
+    <p class="lead">
+      这 3 个 HTML 页面分别对应 3 类最常见、也最重要的 SaaS 投放场景。之所以不是更多，是因为它们已经覆盖了绝大多数账户配置逻辑：自助试用型、销售线索型、以及你这种“配置型 SaaS”。
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="pill">模板一</span>
+        <h2>PLG SaaS</h2>
+        <p>适合免费试用、自助注册、快速激活的产品。重点是让谷歌学到激活和付费，而不只是注册。</p>
+        <ul>
+          <li>讲清楚 GA4、GTM、Auto-tagging、Primary Conversion 的作用</li>
+          <li>适合 API、开发者工具、自助协作工具</li>
+        </ul>
+        <a class="button" href="./plg-saas-google-ads-template.html">打开模板一</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">模板二</span>
+        <h2>B2B Lead Gen</h2>
+        <p>适合预约演示、销售跟进、长决策周期的产品。重点是把线索质量和成交结果回传给谷歌。</p>
+        <ul>
+          <li>重点解释 GCLID、离线转化、线索增强型转化</li>
+          <li>适合企业软件、安全、数据、咨询式 SaaS</li>
+        </ul>
+        <a class="button" href="./b2b-lead-gen-google-ads-template.html">打开模板二</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">模板三</span>
+        <h2>你的产品场景</h2>
+        <p>适合“帮企业配置谷歌广告账户”的 SaaS 自己做广告。重点是从问题、诊断、合规、归因和教育视角建账户。</p>
+        <ul>
+          <li>直接针对你的产品定位与获客逻辑</li>
+          <li>包含我对你这个产品的洞见与 AI 用法建议</li>
+        </ul>
+        <a class="button" href="./google-ads-config-saas-for-google-ads-saas.html">打开模板三</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">模板四</span>
+        <h2>CoveAuto 首批投放方案</h2>
+        <p>基于 `coveauto.ai` 当前公开定位，继续向前一步：给出首批关键词分组、广告文案、落地页结构和否定词清单。</p>
+        <ul>
+          <li>面向“AI 落地页 + Google Ads + 自动优化”场景</li>
+          <li>明确哪些是官网事实，哪些是我基于官网信息做的推断</li>
+        </ul>
+        <a class="button" href="./coveauto-google-ads-launch-plan.html">打开模板四</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
